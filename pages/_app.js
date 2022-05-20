@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
@@ -102,6 +103,10 @@ const logOut = () => {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
+      <Head>
+      <meta name="description" content="Coderz Sales - Wear Code, Write Code!" />
+        <link rel="icon" href="/coderz-logo.svg" />
+      </Head>
   <Navbar cart={cart} logOut={logOut} keyMaker={keyMaker} user={user} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
   <Component buyNow={buyNow} keyMaker={keyMaker} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
   <Footer />

@@ -2,9 +2,13 @@ import React from 'react'
 import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai';
 import {BsCreditCardFill} from 'react-icons/bs'
 import Link from 'next/link';
+import Head from 'next/head';
 
 const Checkout = ({ cart, subTotal, addToCart, removeFromCart }) => {
   return <>
+    <Head>
+      <title>Checkout | Coderz Sales</title>
+    </Head>
     <div className="container font-semibold flex justify-center pt-5 text-xl">Checkout</div>
     <div className='m-10'>
       <div className="flex py-2 lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">

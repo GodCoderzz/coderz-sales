@@ -3,11 +3,15 @@ import Link from 'next/link'
 import mongoose from 'mongoose'
 import Product from '../models/Product'
 import { useState } from 'react'
+import Head from 'next/head'
 
 const Hoodies = ({hoodie, keyMaker}) => {
   const [hood, sethood] = useState(hoodie)
-  return (
-    <div className='container'>
+  return <>
+    <Head>
+      <title>Hoodies | Coderz Sales</title>
+    </Head>
+      <div className='container'>
       <section className="text-gray-600 body-font">
   <div className="container px-5 mx-auto py-24">
     <div className="flex flex-wrap -m-4 justify-center">
@@ -47,7 +51,7 @@ const Hoodies = ({hoodie, keyMaker}) => {
   </div>
 </section>
     </div>
-  )
+</>
 }
 
 export async function getServerSideProps(context) {

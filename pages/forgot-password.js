@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { HiLockClosed } from 'react-icons/hi'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 
 const Forgot = () => {
   let router = useRouter()
@@ -10,8 +11,10 @@ const Forgot = () => {
       router.push("/")
     }
   }, [])
-  return (
-    <>
+  return  <>
+    <Head>
+      <title>Reset Password | Coderz Sales</title>
+    </Head>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
@@ -68,7 +71,7 @@ const Forgot = () => {
         </div>
       </div>
     </>
-  )
+  
 }
 
 export default Forgot

@@ -1,7 +1,11 @@
 import React from 'react'
+import Head from 'next/head'
 
 const Order = () => {
-  return (
+  return <>
+    <Head>
+      <title>Order Confirmation | Coderz Sales</title>
+    </Head>
     <section className="text-gray-600 body-font overflow-hidden">
   <div className="container px-5 py-14 mx-auto">
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -45,7 +49,7 @@ const Order = () => {
     </div>
   </div>
 </section>
-  )
+  </>
 }
 
 export default Order

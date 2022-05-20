@@ -3,13 +3,17 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Product from '../models/Product'
 import mongoose from "mongoose";
+import Head from 'next/head';
 
 
 const Tshirt = ({cloths}) => {
 
   const [tData, settData] = useState(cloths)
 
-  return (
+  return <>
+    <Head>
+      <title>Tshirts | Coderz Sales</title>
+    </Head>
     <div className='container'>
       <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
@@ -50,7 +54,7 @@ const Tshirt = ({cloths}) => {
   </div>
 </section>
     </div>
-  )
+  </>
 }
 
 export async function getServerSideProps(context) {
