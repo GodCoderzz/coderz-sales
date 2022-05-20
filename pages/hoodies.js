@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import Product from '../models/Product'
 import { useState } from 'react'
 
-const Hoodies = ({hoodie}) => {
+const Hoodies = ({hoodie, keyMaker}) => {
   const [hood, sethood] = useState(hoodie)
   return (
     <div className='container'>
@@ -12,7 +12,7 @@ const Hoodies = ({hoodie}) => {
   <div className="container px-5 mx-auto py-24">
     <div className="flex flex-wrap -m-4 justify-center">
       {Object.keys(hood).length ==0 && <p>Sorry! Unfortunately, we are running out of stocks. Stay Tuned!</p>}
-    {Object.keys(hood).map((item) => { return <Link href={`/product/${hood[item].slug}`}>
+    {Object.keys(hood).map((item) => { return <Link key={hood[item].slug} href={`/product/${hood[item].slug}`}>
       <div className="lg:w-1/5 m-5 md:w-1/2 p-4 w-full cursor-pointer shadow-lg">
         <a className="block relative rounded overflow-hidden">
           <img alt="ecommerce" className="h-[36vh] block" src={hood[item].img} />

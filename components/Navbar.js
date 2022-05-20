@@ -8,8 +8,8 @@ import { ImBin2 } from 'react-icons/im'
 import { useRef } from 'react'
 import {MdAccountCircle} from 'react-icons/md'
 
-const Navbar = ({ cart, logOut, user, key, addToCart, removeFromCart, subTotal, clearCart }) => {
-  // console.log(cart, addToCart, removeFromCart, subTotal, clearCart)
+const Navbar = ({ cart, logOut, user, keyMaker, addToCart, removeFromCart, subTotal, clearCart }) => {
+  
   const ref = useRef(null)
   const [dropDown, setdropDown] = useState(false)
   const toggleCart = () => {
@@ -24,8 +24,7 @@ const Navbar = ({ cart, logOut, user, key, addToCart, removeFromCart, subTotal, 
 
   }
  
-  return (
-    <nav className='nav flex flex-col md:flex-row md:justify-start justify-center px-8 py-1  self-center align-middle shadow-md sticky top-0 z-10 bg-white' >
+  return <nav className='nav flex flex-col md:flex-row md:justify-start justify-center px-8 py-1  self-center align-middle shadow-md sticky top-0 z-10 bg-white' >
       <div className='self-center mr-auto  md:mx-5 sm:mx-0 my-auto'>
         <Link href={"/"}>
           <a>  <Image src='/coderz-logo-h.svg' height={650 / 14} width={1370 / 14} />  </a>
@@ -65,7 +64,7 @@ const Navbar = ({ cart, logOut, user, key, addToCart, removeFromCart, subTotal, 
           }
 
           {Object.keys(cart).map((k) => {
-            return <li key={key}>
+            return <li key={cart[k].name}>
               <div className='item flex my-3 font-semibold'>
                 <div className='flex justify-center items-center w-2/3 text-xl'>{cart[k].name} ({cart[k].variant}/{cart[k].size})</div>
                 <div className='flex justify-center items-center w-1/3'><AiFillMinusCircle onClick={() => { removeFromCart(k, cart[k].name, cart[k].qty, cart[k].price, cart[k].size, cart[k].variant) }} className='text-xl text-orange-700' /> <span className="mx-2 pointer-events-none">{cart[k].qty}</span> <AiFillPlusCircle onClick={() => { addToCart(k, cart[k].name, cart[k].qty, cart[k].price, cart[k].size, cart[k].variant) }} className='text-xl text-orange-700' /></div>
@@ -84,7 +83,7 @@ const Navbar = ({ cart, logOut, user, key, addToCart, removeFromCart, subTotal, 
 
       </div>
     </nav>
-  )
+  
 }
 
 export default Navbar

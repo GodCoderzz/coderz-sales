@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import Product from '../models/Product'
 import { useState } from 'react'
 
-const Mugs = ({mug}) => {
+const Mugs = ({mug, keyMaker}) => {
   const [mugas, setmugas] = useState(mug)
   return (
     <div className='container'>
@@ -12,7 +12,7 @@ const Mugs = ({mug}) => {
   <div className="container px-5 mx-auto py-24">
     <div className="flex flex-wrap -m-4 justify-center">
       {Object.keys(mugas).length ==0 && <p>Sorry! Unfortunately, we are running out of stocks. Stay Tuned!</p>}
-    {Object.keys(mugas).map((item) => { return <Link href={`/product/${mugas[item].slug}`}>
+    {Object.keys(mugas).map((item) => { return <Link key={keyMaker} href={`/product/${mugas[item].slug}`}>
       <div className="lg:w-1/5 m-5 md:w-1/2 p-4 w-full cursor-pointer shadow-lg">
         <a className="block relative rounded overflow-hidden">
           <img alt="ecommerce" className="h-[36vh] block" src={mugas[item].img} />
