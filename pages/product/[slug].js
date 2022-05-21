@@ -18,7 +18,7 @@ const Post = ({ addToCart, product, variants, buyNow }) => {
   const [size, setsize] = useState(product.size)
 
   const checkService = async () => {
-    let pins = await fetch('http://localhost:3000/api/pin')
+    let pins = await fetch(`${process.env.NEXT_PUBLIC_PROD_URL}/api/pin`)
     let pinJson = await pins.json();
     console.log(pinJson, pin)
     if (pinJson.includes(parseInt(pin))) {
