@@ -33,7 +33,7 @@ const Order = () => {
           <div className=" text-gray-500">₹105</div>
         </div>
         <div className="flex border-t border-b mb-6 border-gray-200 py-2 justify-around">
-          <div className="text-gray-500">It's a feature(SM/Black)</div>
+          <div className="text-gray-500">Its a fe...(SM/Black)</div>
           <div className=" text-gray-500 text-right">2</div>
           <div className=" text-gray-500">₹320</div>
         </div>
