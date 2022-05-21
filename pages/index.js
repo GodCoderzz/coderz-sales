@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { FaTshirt } from 'react-icons/fa'
 
 export default function Home() {
-  return (
-    <div className=''>
+  return <>
+      <div className=''>
 
 
       <Head>
@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Explore The Shop</h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">We have all types of branded tshirts, hoodies and mugs at the most affordable price all over India! Please check out and grab the one, Let's make this a trend!</p>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">We have all types of branded tshirts, hoodies and mugs at the most affordable price all over India! Please check out and grab the one, Lets make this a trend!</p>
           </div>
           <div className="flex flex-wrap -m-4">
             <Link href={'/tshirts'}><div className="lg:w-1/3 sm:w-1/2 p-4 cursor-pointer shadow-xl">
@@ -50,7 +50,7 @@ export default function Home() {
                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
 
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Mugs</h1>
-                  <p className="leading-relaxed">A handful of mugs with different shades and patterns in one shop! Check out & grab one!</p>
+                  <p className="leading-relaxed">A handful of mugs with different shades and patterns in one shop! Check out and grab one!</p>
                 </div>
               </div>
             </div></Link>
@@ -114,5 +114,5 @@ export default function Home() {
 
 
     </div>
-  )
+  </>
 }

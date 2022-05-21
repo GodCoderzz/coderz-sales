@@ -63,7 +63,7 @@ const Checkout = ({ cart, subTotal, addToCart, removeFromCart }) => {
                 <div className='my-4 font-semibold'>No items to chekout!</div>
               }
                {Object.keys(cart).map((k) => {
-                return <li>
+                return <li key={cart[k].name}>
                   <div className='item flex my-3 font-semibold'>
                     <div className='flex justify-center items-center text-xl capitalize'>{cart[k].name} ({cart[k].variant}/{cart[k].size})</div>
                     <div className='flex justify-center items-center w-1/3'><AiFillMinusCircle onClick={() => { removeFromCart(k, cart[k].name, cart[k].qty, cart[k].price, cart[k].size, cart[k].variant) }} className='text-xl text-orange-700' /> <span className="mx-2">{cart[k].qty}</span> <AiFillPlusCircle onClick={() => { addToCart(k, cart[k].name, cart[k].qty, cart[k].price, cart[k].size, cart[k].variant) }} className='text-xl text-orange-700' /></div>

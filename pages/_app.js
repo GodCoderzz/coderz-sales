@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
      setkeyMaker(Math.random())
    }
   
-  }, [router.query])
+  }, [router.query]) // eslint-disable-line react-hooks/exhaustive-deps
   
 const logOut = () => {
   localStorage.removeItem("token")

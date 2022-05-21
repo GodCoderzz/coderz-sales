@@ -10,7 +10,7 @@ const Forgot = () => {
     if(localStorage.getItem("token")){
       router.push("/")
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return  <>
     <Head>
       <title>Reset Password | Coderz Sales</title>
