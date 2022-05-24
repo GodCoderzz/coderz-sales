@@ -4,7 +4,9 @@ const nextConfig = {
 }
 module.exports = {
   env: {
-    NEXT_PUBLIC_PROD_URL: 'http://localhost:3000',
+    NEXT_PUBLIC_PROD_URL: 'https://coderz-sales.vercel.app',
+    MONGO_URI: 'mongodb+srv://coderzsales:coderzsalespass@cluster0.gabfr.mongodb.net/?retryWrites=true&w=majority'
+
   },
 }
 module.exports = nextConfig
